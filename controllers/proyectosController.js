@@ -1,3 +1,6 @@
 exports.proyectosHome = (req, res ) => {
-    res.render('index');
+    // se le pueden pasar parametros a render
+    res.render('layout', {
+        nombrePagina = 'Proyectos'
+    });
 }
