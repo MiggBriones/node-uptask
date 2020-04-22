@@ -1,5 +1,5 @@
 exports.proyectosHome = (req, res ) => {
-    res.send('Home...');
+    res.render('index');
 }
 
 exports.proyectosNosotros = (req, res ) => {
