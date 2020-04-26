@@ -1,3 +1,5 @@
+const Proyectos = require('../models/Proyectos');
+
 exports.proyectosHome = (req, res ) => {
     // se le pueden pasar parametros a render
     res.render('index', {
@@ -32,6 +34,8 @@ exports.nuevoProyecto = (req, res) => {
         })
     } else {
         // No hay errores, insertar en la BD
-        
+        Proyectos.create({ nombre })
+            .then( () => console.log('Insertado correctamente.'))
+            .catch(error => console.log(error) );
     }
 }
