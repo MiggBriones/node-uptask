@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 // Crear la conexión a la BD
 const db = require('./config/db');
 
-db.authenticate()
+// Importar el modelo
+require('./models/Proyectos');
+
+db.sync()
     .then( () => console.log('Conectado al Servidor de BD.'))
     .catch(error => console.log(error) );
 
