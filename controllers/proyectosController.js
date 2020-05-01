@@ -1,9 +1,12 @@
 const Proyectos = require('../models/Proyectos');
 
-exports.proyectosHome = (req, res ) => {
+exports.proyectosHome = async(req, res ) => {
+    const proyectos = await Proyectos.findAll();
+
     // se le pueden pasar parametros a render
     res.render('index', {
-        nombrePagina: 'Proyectos'
+        nombrePagina: 'Proyectos',
+        proyectos
     });
 }
 
